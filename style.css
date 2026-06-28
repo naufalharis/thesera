@@ -128,11 +128,6 @@ body::before {
     z-index: 2;
 }
 
-@keyframes heroFloat {
-    0%, 100% { transform: translate(-50%, -50%) scale(1); }
-    50% { transform: translate(-50%, -52%) scale(1.02); }
-}
-
 .title {
     color: #fef9f0;
     font-size: 58px;
@@ -186,7 +181,7 @@ body::before {
     position: absolute;
     width: 120px;
     left: 18px;
-    bottom: 28px;
+    bottom: 34px;
     z-index: 3;
     filter: drop-shadow(0 8px 20px rgba(0, 0, 0, 0.08));
     display: block;
@@ -604,6 +599,68 @@ body::before {
     100% { transform: rotate(360deg) scale(1); opacity: 0.3; }
 }
 
+/* ====== NAVIGATION BUTTONS ====== */
+.nav-button {
+    position: absolute;
+    z-index: 10;
+    padding: 12px 28px;
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-radius: 50px;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+    cursor: pointer;
+    color: white;
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 600;
+    font-size: 14px;
+    letter-spacing: 1px;
+    user-select: none;
+    min-width: 110px;
+    text-align: center;
+}
+
+.nav-button:hover {
+    background: rgba(255, 255, 255, 0.3);
+    transform: scale(1.05);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
+}
+
+.nav-button:active {
+    transform: scale(0.95);
+}
+
+.nav-button.prev-btn {
+    background: rgba(255, 255, 255, 0.08);
+    bottom: 40px;
+    left: 30px;
+}
+
+.nav-button.prev-btn:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.nav-button.next-btn {
+    bottom: 40px;
+    right: 30px;
+}
+
+/* Posisi khusus untuk halaman pertama */
+.phone .next-btn {
+    bottom: 40px;
+    right: 30px;
+    left: auto;
+}
+
+/* Posisi khusus untuk halaman terakhir */
+.new-chapter-page .prev-btn {
+    bottom: 40px;
+    left: 30px;
+    right: auto;
+}
+
 /* ====== RESPONSIVE ====== */
 @media (max-width: 450px) {
     .wrapper {
@@ -683,6 +740,21 @@ body::before {
     .sparkle {
         animation-duration: 1.5s;
     }
+
+    .nav-button {
+        padding: 10px 18px;
+        font-size: 12px;
+        min-width: 85px;
+        bottom: 25px !important;
+    }
+
+    .nav-button.prev-btn {
+        left: 15px;
+    }
+
+    .nav-button.next-btn {
+        right: 15px;
+    }
 }
 
 @media (max-width: 1050px) {
@@ -703,6 +775,21 @@ body::before {
     .letter-page .duck,
     .new-chapter-page .duck {
         width: 90px;
+    }
+
+    .nav-button {
+        padding: 10px 18px;
+        font-size: 12px;
+        min-width: 85px;
+        bottom: 25px !important;
+    }
+
+    .nav-button.prev-btn {
+        left: 15px;
+    }
+
+    .nav-button.next-btn {
+        right: 15px;
     }
 }
 

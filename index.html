@@ -18,7 +18,7 @@
     <div class="wrapper">
 
         <!-- ====== PHONE (HALAMAN 1) ====== -->
-        <div class="phone">
+        <div class="phone" id="page1">
             <!-- Cloud -->
             <img src="img/cloud.png" class="cloud" alt="Cloud" />
 
@@ -43,11 +43,16 @@
 
             <!-- Duck -->
             <img src="img/duck.png" class="duck" alt="Duck" />
+
+            <!-- Tombol Next -->
+            <div class="nav-button next-btn" onclick="goToNext()">
+                <span>→</span>
+            </div>
         </div>
         <!-- ====== END PHONE ====== -->
 
         <!-- ====== CHAPTER I (HALAMAN 2) ====== -->
-        <section class="chapter-page">
+        <section class="chapter-page" id="page2">
             <img src="img/rancaupas.jpeg" alt="Ranca Upas" />
 
             <div class="chapter-overlay">
@@ -56,10 +61,18 @@
                     Chapter <span>I</span>
                 </h1>
             </div>
+
+            <!-- Tombol Navigasi -->
+            <div class="nav-button prev-btn" onclick="goToPrev()">
+                <span>←</span>
+            </div>
+            <div class="nav-button next-btn" onclick="goToNext()">
+                <span>→</span>
+            </div>
         </section>
 
         <!-- ====== CHAPTER II (HALAMAN 3) ====== -->
-        <section class="chapter-page">
+        <section class="chapter-page" id="page3">
             <img src="img/classico.jpeg" alt="Classico" />
 
             <div class="chapter-overlay">
@@ -68,10 +81,18 @@
                     Chapter <span>II</span>
                 </h1>
             </div>
+
+            <!-- Tombol Navigasi -->
+            <div class="nav-button prev-btn" onclick="goToPrev()">
+                <span>←</span>
+            </div>
+            <div class="nav-button next-btn" onclick="goToNext()">
+                <span>→</span>
+            </div>
         </section>
 
         <!-- ====== LETTER PAGE (HALAMAN 4) ====== -->
-        <section class="letter-page">
+        <section class="letter-page" id="page4">
             <!-- Cloud -->
             <img src="img/cloud.png" class="cloud" alt="Cloud" />
 
@@ -115,10 +136,18 @@
                     twenties, it's been truly beautiful.
                 </p>
             </div>
+
+            <!-- Tombol Navigasi -->
+            <div class="nav-button prev-btn" onclick="goToPrev()">
+                <span>←</span>
+            </div>
+            <div class="nav-button next-btn" onclick="goToNext()">
+                <span>→</span>
+            </div>
         </section>
 
         <!-- ====== NEW CHAPTER PAGE (HALAMAN 5) ====== -->
-        <section class="new-chapter-page">
+        <section class="new-chapter-page" id="page5">
             <!-- Cloud -->
             <img src="img/cloud.png" class="cloud" alt="Cloud" />
             
@@ -144,10 +173,107 @@
                     coming
                 </p>
             </div>
+
+            <!-- Tombol Prev -->
+            <div class="nav-button prev-btn" onclick="goToPrev()">
+                <span>←</span>
+            </div>
         </section>
 
     </div>
     <!-- ====== END WRAPPER ====== -->
+
+    <script>
+        // Daftar semua halaman
+        const pages = [
+            document.getElementById('page1'),
+            document.getElementById('page2'),
+            document.getElementById('page3'),
+            document.getElementById('page4'),
+            document.getElementById('page5')
+        ];
+
+        let currentPage = 0;
+
+        // Fungsi untuk pindah ke halaman berikutnya
+        function goToNext() {
+            if (currentPage < pages.length - 1) {
+                currentPage++;
+                pages[currentPage].scrollIntoView({ 
+                    behavior: 'smooth', 
+                    block: 'start' 
+                });
+            }
+        }
+
+        // Fungsi untuk pindah ke halaman sebelumnya
+        function goToPrev() {
+            if (currentPage > 0) {
+                currentPage--;
+                pages[currentPage].scrollIntoView({ 
+                    behavior: 'smooth', 
+                    block: 'start' 
+                });
+            }
+        }
+
+        // Update current page saat scroll
+        window.addEventListener('scroll', () => {
+            const scrollPosition = window.scrollY + 100;
+            pages.forEach((page, index) => {
+                if (page) {
+                    const rect = page.getBoundingClientRect();
+                    const pageTop = rect.top + window.scrollY;
+                    const pageBottom = pageTop + rect.height;
+                    
+                    if (scrollPosition >= pageTop && scrollPosition < pageBottom) {
+                        currentPage = index;
+                    }
+                }
+            });
+        });
+
+        // Keyboard navigation (panah kiri/kanan)
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowRight' || e.key === 'ArrowDown') {
+                e.preventDefault();
+                goToNext();
+            } else if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') {
+                e.preventDefault();
+                goToPrev();
+            }
+        });
+
+        // Swipe navigation untuk mobile
+        let touchStartX = 0;
+        let touchStartY = 0;
+
+        document.addEventListener('touchstart', (e) => {
+            touchStartX = e.changedTouches[0].screenX;
+            touchStartY = e.changedTouches[0].screenY;
+        });
+
+        document.addEventListener('touchend', (e) => {
+            const touchEndX = e.changedTouches[0].screenX;
+            const touchEndY = e.changedTouches[0].screenY;
+            const diffX = touchStartX - touchEndX;
+            const diffY = touchStartY - touchEndY;
+
+            // Cek apakah swipe horizontal (lebih dominan)
+            if (Math.abs(diffX) > Math.abs(diffY)) {
+                if (Math.abs(diffX) > 50) { // Minimal swipe 50px
+                    if (diffX > 0) {
+                        goToNext(); // Swipe kiri = next
+                    } else {
+                        goToPrev(); // Swipe kanan = prev
+                    }
+                }
+            }
+        });
+
+        console.log('✨ Our Memories - Navigasi siap digunakan!');
+        console.log('📱 Gunakan tombol Next/Prev, keyboard (← →), atau swipe!');
+    </script>
 
 </body>
 </html>
