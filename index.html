@@ -1,279 +1,202 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Our Memories ✦</title>
-
-    <!-- Font -->
-    <link href="https://fonts.googleapis.com/css2?family=Playball&display=swap" rel="stylesheet" />
-    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
-    
-    <!-- CSS terpisah -->
-    <link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Our Memories ✦</title>
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playball&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <!-- CSS terpisah -->
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-    <!-- ====== WRAPPER ====== -->
-    <div class="wrapper">
+  <!-- ====== WRAPPER ====== -->
+  <div class="wrapper" id="wrapper">
 
-        <!-- ====== PHONE (HALAMAN 1) ====== -->
-        <div class="phone" id="page1">
-            <!-- Cloud -->
-            <img src="img/cloud.png" class="cloud" alt="Cloud" />
-
-            <!-- Hero Section -->
-            <div class="hero">
-                <h1 class="title">
-                    Lets see our<br />
-                    memories
-                </h1>
-                <img src="img/flower.png" class="flower1" alt="Flower" />
-            </div>
-
-            <!-- Sparkles -->
-            <div class="sparkle s1"></div>
-            <div class="sparkle s2"></div>
-            <div class="sparkle s3"></div>
-            <div class="sparkle s4"></div>
-            <div class="sparkle s5"></div>
-            <div class="sparkle s6"></div>
-            <div class="sparkle s7"></div>
-            <div class="sparkle s8"></div>
-
-            <!-- Duck -->
-            <img src="img/duck.png" class="duck" alt="Duck" />
-
-            <!-- Tombol Next -->
-            <div class="nav-button next-btn" onclick="goToNext()">
-                <span>→</span>
-            </div>
-        </div>
-        <!-- ====== END PHONE ====== -->
-
-        <!-- ====== CHAPTER I (HALAMAN 2) ====== -->
-        <section class="chapter-page" id="page2">
-            <img src="img/rancaupas.jpeg" alt="Ranca Upas" />
-
-            <div class="chapter-overlay">
-                <p class="chapter-date">Ranca Upas 28/06/2024</p>
-                <h1 class="chapter-title">
-                    Chapter <span>I</span>
-                </h1>
-            </div>
-
-            <!-- Tombol Navigasi -->
-            <div class="nav-button prev-btn" onclick="goToPrev()">
-                <span>←</span>
-            </div>
-            <div class="nav-button next-btn" onclick="goToNext()">
-                <span>→</span>
-            </div>
-        </section>
-
-        <!-- ====== CHAPTER II (HALAMAN 3) ====== -->
-        <section class="chapter-page" id="page3">
-            <img src="img/classico.jpeg" alt="Classico" />
-
-            <div class="chapter-overlay">
-                <p class="chapter-date">Classico 25/06/2025</p>
-                <h1 class="chapter-title">
-                    Chapter <span>II</span>
-                </h1>
-            </div>
-
-            <!-- Tombol Navigasi -->
-            <div class="nav-button prev-btn" onclick="goToPrev()">
-                <span>←</span>
-            </div>
-            <div class="nav-button next-btn" onclick="goToNext()">
-                <span>→</span>
-            </div>
-        </section>
-
-        <!-- ====== LETTER PAGE (HALAMAN 4) ====== -->
-        <section class="letter-page" id="page4">
-            <!-- Cloud -->
-            <img src="img/cloud.png" class="cloud" alt="Cloud" />
-
-            <!-- Flower -->
-            <img src="img/flower.png" class="flower1" alt="Flower" />
-
-            <!-- Sparkles -->
-            <div class="sparkle s1"></div>
-            <div class="sparkle s2"></div>
-            <div class="sparkle s3"></div>
-            <div class="sparkle s4"></div>
-            <div class="sparkle s5"></div>
-            <div class="sparkle s6"></div>
-            <div class="sparkle s7"></div>
-            <div class="sparkle s8"></div>
-
-            <!-- Duck -->
-            <img src="img/duck.png" class="duck" alt="Duck" />
-
-            <div class="letter-content">
-                <p class="letter-text">
-                    we've made it through three<br />
-                    years! Congratulations!! we did it!
-                </p>
-
-                <p class="letter-text">
-                    i know it's been hard, really hard<br />
-                    huff. might get even tougher ahead,<br />
-                    perhaps far more difficult than we<br />
-                    ever imagined.<br />
-                    whatever the outcome, i hope we<br />
-                    remain beautiful memories in each<br />
-                    other's minds.
-                </p>
-
-                <p class="letter-text">
-                    if we don't end up together, i hope<br />
-                    we become a cherished memory! if<br />
-                    we do, i hope we stay happy forever!<br />
-                    thank you for being a part of my<br />
-                    twenties, it's been truly beautiful.
-                </p>
-            </div>
-
-            <!-- Tombol Navigasi -->
-            <div class="nav-button prev-btn" onclick="goToPrev()">
-                <span>←</span>
-            </div>
-            <div class="nav-button next-btn" onclick="goToNext()">
-                <span>→</span>
-            </div>
-        </section>
-
-        <!-- ====== NEW CHAPTER PAGE (HALAMAN 5) ====== -->
-        <section class="new-chapter-page" id="page5">
-            <!-- Cloud -->
-            <img src="img/cloud.png" class="cloud" alt="Cloud" />
-            
-            <!-- Flower -->
-            <img src="img/flower.png" class="flower1" alt="Flower" />
-            
-            <!-- Sparkles -->
-            <div class="sparkle s1"></div>
-            <div class="sparkle s2"></div>
-            <div class="sparkle s3"></div>
-            <div class="sparkle s4"></div>
-            <div class="sparkle s5"></div>
-            <div class="sparkle s6"></div>
-            <div class="sparkle s7"></div>
-            <div class="sparkle s8"></div>
-            
-            <!-- Duck -->
-            <img src="img/duck.png" class="duck" alt="Duck" />
-            
-            <div class="new-chapter-content">
-                <p class="new-chapter-text">
-                    New chapter<br />
-                    coming
-                </p>
-            </div>
-
-            <!-- Tombol Prev -->
-            <div class="nav-button prev-btn" onclick="goToPrev()">
-                <span>←</span>
-            </div>
-        </section>
-
+    <!-- ====== PHONE (HALAMAN 1) ====== -->
+    <div class="phone page" id="page1">
+      <img src="img/cloud.png" class="cloud" alt="Cloud" />
+      <div class="hero">
+        <h1 class="title">Lets see our<br />memories</h1>
+        <img src="img/flower.png" class="flower1" alt="Flower" />
     </div>
-    <!-- ====== END WRAPPER ====== -->
+    <!-- SPARKLES di bawah flower -->
+    <div class="sparkle s1"></div>
+    <div class="sparkle s2"></div>
+    <div class="sparkle s3"></div>
+    <div class="sparkle s4"></div>
+    <div class="sparkle s5"></div>
+    <div class="sparkle s6"></div>
+    <div class="sparkle s7"></div>
+    <div class="sparkle s8"></div>
+      <img src="img/duck.png" class="duck" alt="Duck" />
+      <div class="nav-button next-btn" onclick="goToNext()"><span>v</span></div>
+    </div>
 
-    <script>
-        // Daftar semua halaman
-        const pages = [
-            document.getElementById('page1'),
-            document.getElementById('page2'),
-            document.getElementById('page3'),
-            document.getElementById('page4'),
-            document.getElementById('page5')
-        ];
+    <div class="chapter-page chapter-1 page" id="page2">
+      <img src="img/rancaupas.jpeg" alt="Ranca Upas" class="chapter-img" />
+      <div class="chapter-overlay">
+        <p class="chapter-date">Ranca Upas 28/06/2024</p>
+        <h1 class="chapter-title">Chapter <span>I</span></h1>
+      </div>
+      <div class="nav-button prev-btn" onclick="goToPrev()"><span>^</span></div>
+      <div class="nav-button next-btn" onclick="goToNext()"><span>v</span></div>
+    </div>
 
-        let currentPage = 0;
+    <!-- ====== CHAPTER II (HALAMAN 3) ====== -->
+    <div class="chapter-page chapter-2 page" id="page3">
+      <img src="img/classico.jpeg" alt="Classico" class="chapter-img" />
+      <div class="chapter-overlay">
+        <p class="chapter-date">Classico 25/06/2025</p>
+        <h1 class="chapter-title">Chapter <span>II</span></h1>
+      </div>
+      <div class="nav-button prev-btn" onclick="goToPrev()"><span>^</span></div>
+      <div class="nav-button next-btn" onclick="goToNext()"><span>v</span></div>
+    </div>
+    <!-- ====== LETTER PAGE (HALAMAN 4) ====== -->
+    <div class="letter-page page" id="page4">
+      <img src="img/cloud.png" class="cloud" alt="Cloud" />
+      <img src="img/flower.png" class="flower1" alt="Flower" />
+      <img src="img/duck.png" class="duck" alt="Duck" />
+      <div class="letter-content">
+        <p class="letter-text">we've made it through three<br />years! Congratulations!! we did it!</p>
+        <p class="letter-text">i know it's been hard, really hard<br />huff. might get even tougher ahead,<br />perhaps far more difficult than we<br />ever imagined.<br />whatever the outcome, i hope we<br />remain beautiful memories in each<br />other's minds.</p>
+        <p class="letter-text">if we don't end up together, i hope<br />we become a cherished memory! if<br />we do, i hope we stay happy forever!<br />thank you for being a part of my<br />twenties, it's been truly beautiful.</p>
+      </div>
+      <div class="nav-button prev-btn" onclick="goToPrev()"><span>^</span></div>
+      <div class="nav-button next-btn" onclick="goToNext()"><span>v</span></div>
+    </div>
 
-        // Fungsi untuk pindah ke halaman berikutnya
-        function goToNext() {
-            if (currentPage < pages.length - 1) {
-                currentPage++;
-                pages[currentPage].scrollIntoView({ 
-                    behavior: 'smooth', 
-                    block: 'start' 
-                });
-            }
+    <!-- ====== NEW CHAPTER PAGE (HALAMAN 5) ====== -->
+    <div class="new-chapter-page page" id="page5">
+      <img src="img/cloud.png" class="cloud" alt="Cloud" />
+      <img src="img/flower.png" class="flower1" alt="Flower" />
+      <img src="img/duck.png" class="duck" alt="Duck" />
+      <div class="new-chapter-content">
+        <p class="new-chapter-text">New chapter<br />coming</p>
+      </div>
+      <div class="nav-button prev-btn" onclick="goToPrev()"><span>^</span></div>
+    </div>
+
+  </div>
+  <!-- ====== END WRAPPER ====== -->
+
+  <script>
+    // Daftar semua halaman
+    const pages = document.querySelectorAll('.page');
+    const wrapper = document.getElementById('wrapper');
+
+    let currentPage = 0;
+    let isTransitioning = false;
+
+    // Set tinggi wrapper sesuai jumlah halaman
+    function updateWrapperHeight() {
+      const pageHeight = window.innerHeight;
+      wrapper.style.height = (pages.length * pageHeight) + 'px';
+      pages.forEach(page => {
+        page.style.height = pageHeight + 'px';
+      });
+    }
+
+    // Scroll ke halaman tertentu
+    function scrollToPage(index) {
+      if (isTransitioning) return;
+      if (index < 0 || index >= pages.length) return;
+      isTransitioning = true;
+      currentPage = index;
+      const pageHeight = window.innerHeight;
+      window.scrollTo({
+        top: index * pageHeight,
+        behavior: 'smooth'
+      });
+      setTimeout(() => {
+        isTransitioning = false;
+      }, 500);
+    }
+
+    function goToNext() {
+      if (currentPage < pages.length - 1) scrollToPage(currentPage + 1);
+    }
+
+    function goToPrev() {
+      if (currentPage > 0) scrollToPage(currentPage - 1);
+    }
+
+    // Update current page saat scroll selesai
+    let scrollTimeout;
+    window.addEventListener('scroll', () => {
+      clearTimeout(scrollTimeout);
+      scrollTimeout = setTimeout(() => {
+        const pageHeight = window.innerHeight;
+        const scrollPosition = window.scrollY;
+        const newPage = Math.round(scrollPosition / pageHeight);
+        if (newPage !== currentPage && newPage >= 0 && newPage < pages.length) {
+          currentPage = newPage;
         }
+      }, 100);
+    }, { passive: true });
 
-        // Fungsi untuk pindah ke halaman sebelumnya
-        function goToPrev() {
-            if (currentPage > 0) {
-                currentPage--;
-                pages[currentPage].scrollIntoView({ 
-                    behavior: 'smooth', 
-                    block: 'start' 
-                });
-            }
-        }
+    // Mencegah scroll dengan mouse wheel
+    window.addEventListener('wheel', (e) => {
+      if (e.deltaY > 0 && currentPage >= pages.length - 1) {
+        e.preventDefault();
+        return;
+      }
+      if (e.deltaY < 0 && currentPage <= 0) {
+        e.preventDefault();
+        return;
+      }
+      e.preventDefault();
+      if (e.deltaY > 0) goToNext();
+      else if (e.deltaY < 0) goToPrev();
+    }, { passive: false });
 
-        // Update current page saat scroll
-        window.addEventListener('scroll', () => {
-            const scrollPosition = window.scrollY + 100;
-            pages.forEach((page, index) => {
-                if (page) {
-                    const rect = page.getBoundingClientRect();
-                    const pageTop = rect.top + window.scrollY;
-                    const pageBottom = pageTop + rect.height;
-                    
-                    if (scrollPosition >= pageTop && scrollPosition < pageBottom) {
-                        currentPage = index;
-                    }
-                }
-            });
-        });
+    // Keyboard
+    window.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowDown' || e.key === 'ArrowRight' || e.key === ' ' || e.key === 'PageDown') {
+        e.preventDefault();
+        goToNext();
+      } else if (e.key === 'ArrowUp' || e.key === 'ArrowLeft' || e.key === 'PageUp') {
+        e.preventDefault();
+        goToPrev();
+      }
+    });
 
-        // Keyboard navigation (panah kiri/kanan)
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'ArrowRight' || e.key === 'ArrowDown') {
-                e.preventDefault();
-                goToNext();
-            } else if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') {
-                e.preventDefault();
-                goToPrev();
-            }
-        });
+    // Swipe untuk mobile
+    let touchStartY = 0;
+    document.addEventListener('touchstart', (e) => {
+      touchStartY = e.changedTouches[0].screenY;
+    }, { passive: true });
 
-        // Swipe navigation untuk mobile
-        let touchStartX = 0;
-        let touchStartY = 0;
+    document.addEventListener('touchend', (e) => {
+      const diffY = touchStartY - e.changedTouches[0].screenY;
+      if (Math.abs(diffY) > 50) {
+        if (diffY > 0) goToNext();
+        else goToPrev();
+      }
+    }, { passive: true });
 
-        document.addEventListener('touchstart', (e) => {
-            touchStartX = e.changedTouches[0].screenX;
-            touchStartY = e.changedTouches[0].screenY;
-        });
+    // Update ukuran saat resize
+    window.addEventListener('resize', () => {
+      updateWrapperHeight();
+      const pageHeight = window.innerHeight;
+      window.scrollTo({
+        top: currentPage * pageHeight,
+        behavior: 'auto'
+      });
+    });
 
-        document.addEventListener('touchend', (e) => {
-            const touchEndX = e.changedTouches[0].screenX;
-            const touchEndY = e.changedTouches[0].screenY;
-            const diffX = touchStartX - touchEndX;
-            const diffY = touchStartY - touchEndY;
+    // Inisialisasi
+    updateWrapperHeight();
+    setTimeout(() => {
+      window.scrollTo({ top: 0, behavior: 'auto' });
+    }, 100);
 
-            // Cek apakah swipe horizontal (lebih dominan)
-            if (Math.abs(diffX) > Math.abs(diffY)) {
-                if (Math.abs(diffX) > 50) { // Minimal swipe 50px
-                    if (diffX > 0) {
-                        goToNext(); // Swipe kiri = next
-                    } else {
-                        goToPrev(); // Swipe kanan = prev
-                    }
-                }
-            }
-        });
-
-        console.log('✨ Our Memories - Navigasi siap digunakan!');
-        console.log('📱 Gunakan tombol Next/Prev, keyboard (← →), atau swipe!');
-    </script>
-
+    console.log('✨ Our Memories - Navigasi siap digunakan!');
+    console.log('📱 Gunakan tombol Next/Prev (^ v), keyboard (↑↓←→), atau swipe!');
+    console.log('📄 Total halaman:', pages.length);
+  </script>
 </body>
 </html>

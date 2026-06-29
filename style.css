@@ -1,5 +1,4 @@
-/* ====== style.css ====== */
-
+/* ====== RESET & BASE ====== */
 * {
     margin: 0;
     padding: 0;
@@ -15,26 +14,7 @@ body {
     font-family: 'Quicksand', sans-serif;
     position: relative;
     overflow-x: hidden;
-}
-
-body::before {
-    content: '';
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: 
-        radial-gradient(circle at 20% 50%, rgba(255, 215, 150, 0.05) 0%, transparent 50%),
-        radial-gradient(circle at 80% 50%, rgba(255, 215, 150, 0.05) 0%, transparent 50%);
-    pointer-events: none;
-    z-index: 0;
-    animation: bgPulse 8s ease-in-out infinite;
-}
-
-@keyframes bgPulse {
-    0%, 100% { opacity: 0.5; }
-    50% { opacity: 1; }
+    overflow-y: hidden;
 }
 
 /* ====== WRAPPER ====== */
@@ -50,6 +30,7 @@ body::before {
     position: relative;
     z-index: 1;
     animation: wrapperFloat 6s ease-in-out infinite;
+    opacity: 1;
 }
 
 @keyframes wrapperFloat {
@@ -143,17 +124,6 @@ body::before {
     letter-spacing: 1px;
 }
 
-@keyframes titlePulse {
-    0%, 100% { 
-        transform: scale(1);
-        text-shadow: 0 8px 40px rgba(150, 80, 40, 0.2);
-    }
-    50% { 
-        transform: scale(1.03);
-        text-shadow: 0 8px 60px rgba(150, 80, 40, 0.35), 0 0 80px rgba(255, 200, 150, 0.15);
-    }
-}
-
 .flower1 {
     position: absolute;
     width: 200px;
@@ -174,6 +144,102 @@ body::before {
     50% { transform: translateY(-45%) rotate(10deg) scale(1.05); }
     75% { transform: translateY(-52%) rotate(4deg) scale(1.03); }
     100% { transform: translateY(-48%) rotate(-6deg) scale(1.01); }
+}
+
+/* ====== SPARKLES ====== */
+.sparkle {
+    position: absolute;
+    background: radial-gradient(circle, rgba(255, 245, 220, 0.95) 0%, rgba(255, 215, 150, 0.3) 100%);
+    border-radius: 50%;
+    box-shadow: 
+        0 0 20px rgba(255, 215, 150, 0.6),
+        0 0 40px rgba(255, 200, 130, 0.2),
+        inset 0 0 10px rgba(255, 255, 255, 0.3);
+    z-index: 3;
+    animation: sparkleComplete 2s ease-in-out infinite;
+    pointer-events: none;
+}
+
+/* SPARKLES DI BAWAH FLOWER */
+.sparkle.s1 {
+    width: 12px;
+    height: 12px;
+    top: 65%;
+    right: 5%;
+    animation-delay: 0s;
+}
+.sparkle.s2 {
+    width: 8px;
+    height: 8px;
+    top: 72%;
+    right: 15%;
+    animation-delay: 0.3s;
+}
+.sparkle.s3 {
+    width: 16px;
+    height: 16px;
+    top: 60%;
+    right: 10%;
+    animation-delay: 0.6s;
+}
+.sparkle.s4 {
+    width: 6px;
+    height: 6px;
+    top: 78%;
+    right: 8%;
+    animation-delay: 0.9s;
+}
+.sparkle.s5 {
+    width: 10px;
+    height: 10px;
+    top: 55%;
+    right: 15%;
+    animation-delay: 1.2s;
+}
+.sparkle.s6 {
+    width: 14px;
+    height: 14px;
+    top: 68%;
+    right: 22%;
+    animation-delay: 1.5s;
+}
+.sparkle.s7 {
+    width: 7px;
+    height: 7px;
+    top: 75%;
+    right: 25%;
+    animation-delay: 1.8s;
+}
+.sparkle.s8 {
+    width: 9px;
+    height: 9px;
+    top: 82%;
+    right: 18%;
+    animation-delay: 0.5s;
+}
+
+/* Animasi sparkle */
+@keyframes sparkleComplete {
+    0% { 
+        transform: scale(0) rotate(0deg);
+        opacity: 0;
+    }
+    25% { 
+        transform: scale(1.2) rotate(30deg);
+        opacity: 1;
+    }
+    50% { 
+        transform: scale(0.8) rotate(60deg);
+        opacity: 0.8;
+    }
+    75% { 
+        transform: scale(1.1) rotate(90deg);
+        opacity: 1;
+    }
+    100% { 
+        transform: scale(0) rotate(120deg);
+        opacity: 0;
+    }
 }
 
 /* ====== DUCK ====== */
@@ -199,56 +265,6 @@ body::before {
     75% { transform: translateX(10px) rotate(1deg) scale(1.02); }
     100% { transform: translateX(0) rotate(-3deg) scale(1); }
 }
-
-/* ====== SPARKLES ====== */
-.sparkle {
-    position: absolute;
-    background: radial-gradient(circle, rgba(255, 245, 220, 0.95) 0%, rgba(255, 215, 150, 0.3) 100%);
-    border-radius: 50%;
-    box-shadow: 
-        0 0 20px rgba(255, 215, 150, 0.6),
-        0 0 40px rgba(255, 200, 130, 0.2),
-        inset 0 0 10px rgba(255, 255, 255, 0.3);
-    z-index: 2;
-    animation: sparkleComplete 2s ease-in-out infinite;
-}
-
-@keyframes sparkleComplete {
-    0% { 
-        opacity: 0.2;
-        transform: scale(0.5) rotate(0deg);
-        box-shadow: 0 0 8px rgba(255, 215, 150, 0.1);
-    }
-    25% { 
-        opacity: 0.8;
-        transform: scale(1.3) rotate(90deg);
-        box-shadow: 0 0 30px rgba(255, 215, 150, 0.8), 0 0 60px rgba(255, 200, 130, 0.3);
-    }
-    50% { 
-        opacity: 1;
-        transform: scale(1.8) rotate(180deg);
-        box-shadow: 0 0 50px rgba(255, 215, 150, 1), 0 0 80px rgba(255, 200, 130, 0.4);
-    }
-    75% { 
-        opacity: 0.8;
-        transform: scale(1.3) rotate(270deg);
-        box-shadow: 0 0 30px rgba(255, 215, 150, 0.8), 0 0 60px rgba(255, 200, 130, 0.3);
-    }
-    100% { 
-        opacity: 0.2;
-        transform: scale(0.5) rotate(360deg);
-        box-shadow: 0 0 8px rgba(255, 215, 150, 0.1);
-    }
-}
-
-.s1 { width: 8px; height: 8px; right: 60px; top: 500px; animation-delay: 0.1s; }
-.s2 { width: 12px; height: 12px; right: 35px; top: 530px; animation-delay: 0.6s; }
-.s3 { width: 5px; height: 5px; right: 45px; top: 575px; animation-delay: 0.3s; }
-.s4 { width: 8px; height: 8px; right: 75px; top: 625px; animation-delay: 1s; }
-.s5 { width: 8px; height: 8px; right: 110px; top: 690px; animation-delay: 0.2s; }
-.s6 { width: 14px; height: 14px; right: 60px; top: 735px; animation-delay: 0.8s; }
-.s7 { width: 8px; height: 8px; right: 140px; top: 755px; animation-delay: 0.4s; }
-.s8 { width: 5px; height: 5px; right: 95px; top: 790px; animation-delay: 1.2s; }
 
 /* ====== CHAPTER PAGE ====== */
 .chapter-page {
@@ -285,16 +301,28 @@ body::before {
     padding: 0;
 }
 
-@keyframes zoomInOut {
-    0% { transform: scale(1); }
-    25% { transform: scale(1.05); }
-    50% { transform: scale(1.12); }
-    75% { transform: scale(1.05); }
-    100% { transform: scale(1); }
+/* Styling untuk Chapter I */
+.chapter-1 .chapter-img {
+    object-position: 23% center;
+    /* efek khusus lainnya */
+}
+
+/* Styling untuk Chapter II */
+.chapter-2 .chapter-img {
+    object-position: center;
+    /* efek khusus lainnya */
+}
+
+/* Styling umum untuk semua chapter img */
+.chapter-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
 }
 
 .chapter-page:first-of-type img {
-    object-position: 20% center;
+    object-position: 65% center;
 }
 
 .chapter-page:last-of-type img {
@@ -365,7 +393,7 @@ body::before {
     100% { transform: scale(1) rotate(0deg) translateY(0); }
 }
 
-/* ====== LETTER PAGE (HALAMAN 4) ====== */
+/* ====== LETTER PAGE ====== */
 .letter-page {
     position: relative;
     width: 100%;
@@ -486,7 +514,7 @@ body::before {
     content: '';
 }
 
-/* ====== NEW CHAPTER PAGE (HALAMAN 5) ====== */
+/* ====== NEW CHAPTER PAGE ====== */
 .new-chapter-page {
     position: relative;
     width: 100%;
@@ -572,17 +600,6 @@ body::before {
     letter-spacing: 2px;
 }
 
-@keyframes textGlow {
-    0%, 100% { 
-        transform: scale(1);
-        text-shadow: 0 8px 30px rgba(100, 60, 30, 0.15);
-    }
-    50% { 
-        transform: scale(1.05);
-        text-shadow: 0 8px 50px rgba(100, 60, 30, 0.3), 0 0 80px rgba(255, 200, 150, 0.1);
-    }
-}
-
 .new-chapter-text::after {
     content: '✦';
     position: absolute;
@@ -603,7 +620,7 @@ body::before {
 .nav-button {
     position: absolute;
     z-index: 10;
-    padding: 12px 28px;
+    padding: 6px 10px;
     background: rgba(255, 255, 255, 0.15);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
@@ -615,10 +632,10 @@ body::before {
     color: white;
     font-family: 'Quicksand', sans-serif;
     font-weight: 600;
-    font-size: 14px;
+    font-size: 12px;
     letter-spacing: 1px;
     user-select: none;
-    min-width: 110px;
+    min-width: 40px;
     text-align: center;
 }
 
@@ -647,14 +664,12 @@ body::before {
     right: 30px;
 }
 
-/* Posisi khusus untuk halaman pertama */
 .phone .next-btn {
     bottom: 40px;
     right: 30px;
     left: auto;
 }
 
-/* Posisi khusus untuk halaman terakhir */
 .new-chapter-page .prev-btn {
     bottom: 40px;
     left: 30px;
@@ -737,14 +752,10 @@ body::before {
         padding: 30px 35px;
     }
 
-    .sparkle {
-        animation-duration: 1.5s;
-    }
-
     .nav-button {
-        padding: 10px 18px;
-        font-size: 12px;
-        min-width: 85px;
+        padding: 8px 12px;
+        font-size: 11px;
+        min-width: 35px;
         bottom: 25px !important;
     }
 
@@ -778,9 +789,9 @@ body::before {
     }
 
     .nav-button {
-        padding: 10px 18px;
-        font-size: 12px;
-        min-width: 85px;
+        padding: 8px 12px;
+        font-size: 11px;
+        min-width: 35px;
         bottom: 25px !important;
     }
 
@@ -805,12 +816,6 @@ body::before {
 ::-webkit-scrollbar-thumb {
     background: rgba(180, 140, 100, 0.4);
     border-radius: 10px;
-    animation: scrollPulse 2s ease-in-out infinite;
-}
-
-@keyframes scrollPulse {
-    0%, 100% { background: rgba(180, 140, 100, 0.4); }
-    50% { background: rgba(180, 140, 100, 0.7); }
 }
 
 ::-webkit-scrollbar-thumb:hover {
